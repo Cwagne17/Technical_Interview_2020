@@ -3,3 +3,10 @@ Oct 5, 2020 -
   with what a REST Api is and how the different files in take home project work together.  After some research reading Node documentation, and Express documentation as well as a few 
   youtube videos, I have a better understanding of what I am trying to build.  Right now the goal is to begin building the back end of the application.  I am not familiar wtih JS so 
   stack overflow is going to be my friend.
+  
+Oct 15th, 2020 - 
+ I have a good understanding of how the .js, and .json files communicate.
+ I am going to create the functions I need without using mongoDB at first.
+ Once Functions work I will try and implement Mongo.  I will be testing using postman.
+ 
+ 
