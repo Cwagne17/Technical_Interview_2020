@@ -9,4 +9,6 @@ Oct 15th, 2020 -
  I am going to create the functions I need without using mongoDB at first.
  Once Functions work I will try and implement Mongo.  I will be testing using postman.
  
+ Realized that I need some form of a DB to make the functions go somewhere so I have been working on establishing a connection between mongo and the server.  The docker-compose up is not working even after using the given files. I do have docker installed.  So I have been trying to find other ways to use mongo.  The online version stopped allowing account creations in 2019 so I was unable to use that.  And I tried to install Mongo locally on my computer and it is not downloading properlly. However, I am glad that I got the server to work!
  
+ In the meantime I am going to just create a DB like Emily demoed in the SEC meeting last night.
