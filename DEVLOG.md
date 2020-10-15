@@ -12,3 +12,8 @@ Oct 15th, 2020 -
  Realized that I need some form of a DB to make the functions go somewhere so I have been working on establishing a connection between mongo and the server.  The docker-compose up is not working even after using the given files. I do have docker installed.  So I have been trying to find other ways to use mongo.  The online version stopped allowing account creations in 2019 so I was unable to use that.  And I tried to install Mongo locally on my computer and it is not downloading properlly. However, I am glad that I got the server to work!
  
  In the meantime I am going to just create a DB like Emily demoed in the SEC meeting last night.
+ 
+ I have been going at it for about 4 hours now.  The server was connected fine. Then when I added routers like we did in the SEC demo it stopped working for some reason. I tried trouble shooting this by moving the get and post into the index.js file. Still did not work for somereason.
+ Which most likely means there is something wrong with the function. I am going to stop for now.  What I will do the next time is try to figure it out and see if I can get it to work.  If not I will write a commented out version of the CRUD functions that would work with mongo if it was connected. I will also try to see if I can connect mongo correctly again.
+ 
+ 
