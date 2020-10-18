@@ -16,4 +16,8 @@ Oct 15th, 2020 -
  I have been going at it for about 4 hours now.  The server was connected fine. Then when I added routers like we did in the SEC demo it stopped working for some reason. I tried trouble shooting this by moving the get and post into the index.js file. Still did not work for somereason.
  Which most likely means there is something wrong with the function. I am going to stop for now.  What I will do the next time is try to figure it out and see if I can get it to work.  If not I will write a commented out version of the CRUD functions that would work with mongo if it was connected. I will also try to see if I can connect mongo correctly again.
  
- 
+Oct 18th, 2020-
+  I did not get a chance to work on it the last two days due to personal events that happened unexpectidly.  However I spent some time trying to trouble shoot some more without any luck.
+  That being said I created an example.txt in the src folder that has a schema that could be used for MongoDB as well as some calls that could be used to load GET and POST information.  I am confident in what I wrote in the example.txt file and believe it would work alongside a working connection to a mongo database.
+  
+  
