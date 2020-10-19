@@ -1,0 +1,58 @@
+
+//Schema 
+//This schema allows for a dictionary style data entry
+//Every entry could have a list of tasks, a singular task, and/or a category name.
+//On a get request you could retrieve entries with similar category names.  This behaves similar to a dictionary
+
+var categorySchema = new mongoose.Schema({
+    category: {
+        type: String,
+        required: false
+    }
+    tasks : {
+        type : [task_name: String],
+        required: false
+    }    
+    task: {
+        type: String,
+        required: false
+    }
+});
+
+
+
+//Example Calls
+
+//Retrieves info from body, saves, and prints as res for confirmation
+router.post('/', function(req,res){
+    const categorySchema = new categorySchema({
+        category: req.body.category,
+        tasks: req.body.tasks,
+        task: req.body.task,
+    });
+
+    categorySchema.save();
+    res.json(savedcategorySchema);
+});
+
+//Get Calls
+
+//Retrieves all saved info
+router.get('/', function(req,res){
+    const logs = categorySchema.find();
+    res.json(logs);
+});
+
+//Next few get request retrieve info via requested category name or task name
+router.get('/:categoryName', function(req,res){
+    const logs = categorySchema.find({category: req.params.categoryName});
+    res.json(logs);
+});
+router.get('/:taskName', function(req,res){
+    const logs = categorySchema.find({task: req.params.taskName});
+    res.json(logs);
+});
+router.get('/:tasksName', function(req,res){
+    const logs = categorySchema.find({tasks: req.params.tasksName});
+    res.json(logs);
+});
