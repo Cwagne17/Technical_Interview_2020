@@ -19,10 +19,9 @@ MongoDriverFactory.build()
   });
 
   //Gets All Tasks
-app.get("/", (req,res)=> {
+app.get("/tasks", (req,res)=> {
   taskDataStore.listTasks().then((tasks) => {
     res.send(tasks);
-    console.log(tasks);
   });
 })
 
@@ -30,7 +29,6 @@ app.get("/", (req,res)=> {
 app.get("/task/:taskId", async (req,res)=> {
   const task: string = await taskDataStore.readTask(req.params.taskId);
   res.send(task);
-  console.log(task);
 });
 
   //Posts req from body
@@ -38,14 +36,12 @@ app.get("/task/:taskId", async (req,res)=> {
 app.post("/", function(req,res){
   taskDataStore.createTask(req.body).then((task) => {
     res.send(task);
-    console.log(task +" New Task Was Created!");
   });
 });
 
   //Updates Information 
 app.patch("/", function(req,res){
   taskDataStore.updateTask(req.body).then(()=> {
-    console.log("A Task has been updated");
     res.sendStatus(200);
   });
 });
