@@ -69,7 +69,9 @@ export class MongoDriver {
    * @param {*} id of the task to delete
    * @memberof MongoDriver
    */
+
   async deleteTask(id) {
+    console.log(ObjectID.isValid(id));
     await this.tasks.deleteOne({ _id: new ObjectID(id) });
   }
 
