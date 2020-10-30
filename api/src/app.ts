@@ -3,11 +3,13 @@ import { MongoDriver } from "./MongoConnector";
 import * as body from "body-parser";
 import express from "express";
 import { Console } from "console";
+import cors from "cors";
 
 const PORT = 3000;
 const app = express();
 
 app.use(body.json());
+app.use(cors({origin: true, credentials: true}));
 
 let taskDataStore;
 MongoDriverFactory.build()
@@ -34,8 +36,8 @@ app.get("/task/:taskId", async (req,res)=> {
   //Posts req from body
   //This Works 
 app.post("/", function(req,res){
-  taskDataStore.createTask(req.body).then((task) => {
-    res.send(task);
+  taskDataStore.createTask(req.body).then(()=>{
+    res.sendStatus(201);
   });
 });
 
@@ -48,8 +50,14 @@ app.patch("/", function(req,res){
 
   //Deletes a Task
 app.delete("/delete/:taskId", async function(req,res){
-  await taskDataStore.deleteTask(req.params.taskId)
-  res.sendStatus(200);
+  console.log(req.params.taskId);
+  try{
+    await taskDataStore.deleteTask(req.params.taskId)
+    res.sendStatus(200);
+  }catch (err){
+    console.log(err);
+  }
+  
 });
 
 app.listen(PORT, ()=> {
