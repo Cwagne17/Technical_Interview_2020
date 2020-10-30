@@ -50,14 +50,9 @@ app.patch("/", function(req,res){
 
   //Deletes a Task
 app.delete("/delete/:taskId", async function(req,res){
-  console.log(req.params.taskId);
-  try{
-    await taskDataStore.deleteTask(req.params.taskId)
+  await taskDataStore.deleteTask(req.params.taskId).then(()=>{
     res.sendStatus(200);
-  }catch (err){
-    console.log(err);
-  }
-  
+  });
 });
 
 app.listen(PORT, ()=> {
