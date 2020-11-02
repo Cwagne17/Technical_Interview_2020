@@ -1,0 +1,24 @@
+<router-outlet></router-outlet>
+<div class="centered-content">
+  <div class="task-container">
+    <div class="tasks">
+      
+      <h1 class="title">
+        Tasks
+      </h1>
+
+      
+      <div class="task" *ngFor = "let task of tasks">
+        <p>{{task.task}}</p>
+        <button class="button" id="delete" (click) = "deleteTask(task._id)" >X</button>
+      </div>
+      
+      <div class="add-container">
+        <input type="text" name="search" [(ngModel)]="input_value" placeholder="Add task..">
+        <button class = "add-button" (click) = "createTask()">Add</button>
+      </div>
+
+    </div>
+    
+  </div>
+</div>
